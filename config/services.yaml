@@ -26,3 +26,24 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    console_command.job_import:
+        class: App\Command\JobImportCommand
+        arguments:
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: console.command }
+
+    console_command.section_import:
+        class: App\Command\SectionImportCommand
+        arguments:
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: console.command }
+
+    console_command.done_job_import:
+        class: App\Command\DoneJobImportCommand
+        arguments:
+            - "@doctrine.orm.entity_manager"
+        tags:
+            - { name: console.command }
