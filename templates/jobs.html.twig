@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+{% block body %}
+    <b> Darbai kurie nebuvo pradeti dirbti </b>
+    {% foreach jobsLeftToDo as job%}
+        job->job_name
+    {% endforeach %}
+
+    <b> Darbai kurie nebuvo pradeti dirbti bet nebaigti </b>
+
+    {% for unfinishedJobs in job%}
+        job
+    {% endfor %}
+{% endblock %}
+</body>
+</html>
